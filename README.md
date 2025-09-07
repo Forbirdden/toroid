@@ -1,6 +1,6 @@
 # Toroid
 
-Simple GUI for Linux Tor Proxy
+Simple GUI for Linux Tor proxy
 
 <img width="622" height="609" alt="image" src="https://github.com/user-attachments/assets/06a60f6b-2429-42dc-8db9-059de5abad98" />
 

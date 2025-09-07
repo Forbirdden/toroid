@@ -2,7 +2,7 @@
 
 Simple GUI for Linux Tor proxy
 
-<img width="622" height="609" alt="image" src="https://github.com/user-attachments/assets/06a60f6b-2429-42dc-8db9-059de5abad98" />
+<img width="622" height="609" alt="image" src="https://github.com/user-attachments/assets/a30eaa20-de31-4234-b6fe-9104f7c11c06" />
 
 ***It's not meant to be perfect and/or the fastest - it's just meant to work***
 

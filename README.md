@@ -2,6 +2,8 @@
 
 Simple GUI for Linux Tor Proxy
 
+<img width="622" height="609" alt="image" src="https://github.com/user-attachments/assets/06a60f6b-2429-42dc-8db9-059de5abad98" />
+
 ***It's not meant to be perfect and/or the fastest - it's just meant to work***
 
 Make sure you have Tor installed, for example:
@@ -12,7 +14,12 @@ or
 ```
 sudo zypper install tor obfs4
 ```
-Packaging into an executable:
+## Packaging into an executable
+Install dependencies:
+```
+pip install PySide6 pyinstaller
+```
+Make a binary:
 ```
 python -m PyInstaller --onefile main.py
 ```

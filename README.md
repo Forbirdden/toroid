@@ -1,1 +1,43 @@
-<img width="370" height="370" alt="image" src="https://github.com/user-attachments/assets/b9845fa3-d063-4c96-8fd0-1655e7d9bb51" />
+# Toroid
+
+Simple GUI for Linux Tor Proxy
+
+***It's not meant to be perfect and/or the fastest - it's just meant to work***
+
+Make sure you have Tor installed, for example:
+```
+sudo apt install tor obfs4proxy
+```
+or
+```
+sudo zypper install tor obfs4
+```
+Packaging into an executable:
+```
+python -m PyInstaller --onefile main.py
+```
+## Using bridges:
+Open your toroid.conf
+
+Add these lines at the end of file:
+```
+ClientTransportPlugin obfs4 exec /path/to/obfs4
+Bridge somebrigdehere
+Bridge andhere
+Bridge evenhere
+Bridge andthere
+UseBridges 1 
+```
+For example:
+```
+## Tor proxy configuration/torrc file
+SocksPort 9050
+DataDirectory /tmp/tor_temp_data
+Log notice stdout
+ClientTransportPlugin obfs4 exec /usr/bin/obfs4proxy
+Bridge obfs4 195.20.227.157:443 B952...
+Bridge obfs4 178.62.227.91:8081 E500...
+Bridge obfs4 57.128.57.245:3099 D655...
+Bridge obfs4 46.226.107.235:57180 93BD...
+UseBridges 1 
+```

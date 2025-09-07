@@ -37,6 +37,8 @@ class Toroid(QMainWindow):
         self.setWindowTitle('Toroid')
         self.setGeometry(100, 100, 500, 450)
         
+        self.setAttribute(Qt.WA_TranslucentBackground)
+        
         central_widget = QWidget()
         self.setCentralWidget(central_widget)
         
@@ -44,7 +46,7 @@ class Toroid(QMainWindow):
         layout.setSpacing(10)
         layout.setContentsMargins(20, 20, 20, 20)
         
-        title_label = QLabel('Tor proxy GUI')
+        title_label = QLabel('TOR proxy')
         title_label.setAlignment(Qt.AlignCenter)
         title_label.setStyleSheet("""
             QLabel {
@@ -98,6 +100,32 @@ class Toroid(QMainWindow):
         layout.addStretch()
         
         central_widget.setLayout(layout)
+        
+        central_widget.setStyleSheet("""
+            QWidget {
+                background-color: #f8f9fa;
+                border-top-left-radius: 0px;
+                border-top-right-radius: 0px;
+                border-bottom-left-radius: 12px;
+                border-bottom-right-radius: 12px;
+                border: 1px solid #dee2e6;
+                border-top: none;
+            }
+            QPushButton {
+                background-color: #c982ff;
+                color: white;
+                border: none;
+                padding: 10px 15px;
+                border-radius: 5px;
+                font-weight: bold;
+            }
+            QPushButton:hover {
+                background-color: #b35df5;
+            }
+            QPushButton:pressed {
+                background-color: #d6abf7;
+            }
+        """)
         
         self.check_tor_installation(silent=True)
     
@@ -237,26 +265,6 @@ if __name__ == '__main__':
         app.setStyle('Fusion') 
     except:
         pass
-    
-    app.setStyleSheet("""
-        QMainWindow {
-            background-color: #f8f9fa;
-        }
-        QPushButton {
-            background-color: #c982ff;
-            color: white;
-            border: none;
-            padding: 10px 15px;
-            border-radius: 5px;
-            font-weight: bold;
-        }
-        QPushButton:hover {
-            background-color: #b35df5;
-        }
-        QPushButton:pressed {
-            background-color: #d6abf7;
-        }
-    """)
     
     window = Toroid()
     window.show()

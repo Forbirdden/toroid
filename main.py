@@ -16,7 +16,7 @@ class Toroid(QMainWindow):
         self.initUI()
     
     def get_torrc_path(self):
-        script_dir = Path(__file__).parent.absolute()
+        script_dir = Path(sys.argv[0]).parent.absolute()
         return script_dir / "toroid.conf"
     
     def ensure_torrc_exists(self):

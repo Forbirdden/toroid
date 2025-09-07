@@ -21,7 +21,7 @@ pip install PySide6 pyinstaller
 ```
 Make a binary:
 ```
-python -m PyInstaller --onefile --windowed --add-data "toroid.conf;." main.py
+python -m PyInstaller --onefile --windowed --add-data "toroid.conf:." main.py
 ```
 ## Using bridges:
 Open your toroid.conf
